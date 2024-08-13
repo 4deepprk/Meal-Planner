@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const option1 = document.getElementById('option1').value;
         const option2 = document.getElementById('option2').value;
         const option3 = document.getElementById('option3').value;
+        const date = document.getElementById('date').value;
 
-        const previewText = `Selected values:\nOption 1: ${option1}\nOption 2: ${option2}\nOption 3: ${option3}`;
+        const previewText = `Selected values:\nOption 1: ${option1}\nOption 2: ${option2}\nOption 3: ${option3}\nDate: ${date}`;
         previewDiv.innerText = previewText;
         previewDiv.style.display = 'block';
         sendBtn.style.display = 'block';
