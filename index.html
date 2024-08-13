@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message to WhatsApp Group</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Send Message to WhatsApp Group</h1>
+        <form id="whatsapp-form">
+            <div class="form-group">
+                <label for="option1">Option 1:</label>
+                <select id="option1" class="form-control">
+                    <option value="Option 1 Value 1">Option 1 Value 1</option>
+                    <option value="Option 1 Value 2">Option 1 Value 2</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="option2">Option 2:</label>
+                <select id="option2" class="form-control">
+                    <option value="Option 2 Value 1">Option 2 Value 1</option>
+                    <option value="Option 2 Value 2">Option 2 Value 2</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="option3">Option 3:</label>
+                <select id="option3" class="form-control">
+                    <option value="Option 3 Value 1">Option 3 Value 1</option>
+                    <option value="Option 3 Value 2">Option 3 Value 2</option>
+                </select>
+            </div>
+            
+            <button type="button" id="generate-btn" class="btn">Generate Preview</button>
+        </form>
+
+        <div id="preview" class="preview"></div>
+
+        <button id="send-btn" class="btn" style="display: none;">Copy Message to Clipboard</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
