@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add event listeners to the dropdowns, and date input to clear the preview when changed
-    const inputs = document.querySelectorAll('#option1, #option2, #option3, #option4, #option5, #date');
+    const inputs = document.querySelectorAll('#option1, #option2, #option3, #option4, #option5, #option6, #option7, #option8, #date');
     inputs.forEach(input => {
         input.addEventListener('change', clearPreview);
     });
@@ -35,9 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const option3 = document.getElementById('option3').value;
         const option4 = document.getElementById('option4').value;
         const option5 = document.getElementById('option5').value;
+        const option6 = document.getElementById('option6').value;
+        const option7 = document.getElementById('option7').value;
+        const option8 = document.getElementById('option8').value;
 	// document.getElementById('text').innerHTML = `<b>Lunch:</b>`;
 	// document.getElementById('text').innerHTML = `<b>Dinner:</b>`;
-        if (date && option1 && option2 && option3 && option4 && option5) {
+        if (date && option1 && option2 && option3 && option4 && option5 && option6 && option7 && option8) {
     	    const dateObj = new Date(date);
 
 	    // Extract the day, month, and year
@@ -63,14 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	    // alert('Formatted Date:', formattedDate);
             const previewText = `\n ${formattedDate}, ${dayName}
 				 \n
-				 \nLunch 
-				 \n${option1},
-				 \n${option2} and
+				 \nLunch: 
+				 \n${option1}
+				 \n${option2}
 				 \n${option3}
-				 \n 
-			         \nDinner 
-				 \n${option4} and
+				 \n${option4}
 				 \n${option5}
+				 \n${option6}
+				 \n 
+			         \nDinner: 
+				 \n${option7}
+				 \n${option8}
 				 \n`;
 	    previewDiv.innerText = previewText;
             previewDiv.style.display = 'block';
