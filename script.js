@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dinnerOptions = [option7, option8].filter(opt => opt !== "NA");
 
         // Construct the preview text
-	let previewText = `<p>${formattedDate}, ${dayName}</p><br>`;
+	let previewText = `${formattedDate}, ${dayName}<br><br>`;
         // let previewText = `\n ${formattedDate}, ${dayName}\n\n`;
 
         if (lunchOptions.length > 0) {
