@@ -29,67 +29,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     generateBtn.addEventListener('click', () => {
-	const date = document.getElementById('date').value;
-        const option1 = document.getElementById('option1').value;
-        const option2 = document.getElementById('option2').value;
-        const option3 = document.getElementById('option3').value;
-        const option4 = document.getElementById('option4').value;
-        const option5 = document.getElementById('option5').value;
-        const option6 = document.getElementById('option6').value;
-        const option7 = document.getElementById('option7').value;
-        const option8 = document.getElementById('option8').value;
-	// document.getElementById('text').innerHTML = `<b>Lunch:</b>`;
-	// document.getElementById('text').innerHTML = `<b>Dinner:</b>`;
-        if (date && option1 && option2 && option3 && option4 && option5 && option6 && option7 && option8) {
-    	    const dateObj = new Date(date);
+    const date = document.getElementById('date').value;
+    const option1 = document.getElementById('option1').value;
+    const option2 = document.getElementById('option2').value;
+    const option3 = document.getElementById('option3').value;
+    const option4 = document.getElementById('option4').value;
+    const option5 = document.getElementById('option5').value;
+    const option6 = document.getElementById('option6').value;
+    const option7 = document.getElementById('option7').value;
+    const option8 = document.getElementById('option8').value;
 
-	    // Extract the day, month, and year
-	    const fmday = String(dateObj.getDate()).padStart(2, '0'); // Add leading zero if necessary
-            const fmmonth = String(dateObj.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1
-	    const fmyear = dateObj.getFullYear();
+    if (date && option1 && option2 && option3 && option4 && option5 && option6 && option7 && option8) {
+        const dateObj = new Date(date);
 
-	    // Get the day of the week as a number (0 for Sunday, 1 for Monday, etc.)
-	    const dayNumber = dateObj.getDay();
+        // Extract the day, month, and year
+        const fmday = String(dateObj.getDate()).padStart(2, '0'); // Add leading zero if necessary
+        const fmmonth = String(dateObj.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1
+        const fmyear = dateObj.getFullYear();
 
-	    // Optional: Convert the day number to a string (e.g., "Sunday", "Monday")
-	    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-	    const dayName = daysOfWeek[dayNumber];
+        // Get the day of the week as a number (0 for Sunday, 1 for Monday, etc.)
+        const dayNumber = dateObj.getDay();
 
-	    // Format the date as dd mm yyyy
-	    const formattedDate = `${fmday} ${fmmonth} ${fmyear}`;
+        // Optional: Convert the day number to a string (e.g., "Sunday", "Monday")
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const dayName = daysOfWeek[dayNumber];
 
-	    const lunch = "Lunch";
-    	    const dinner = "Dinner";
-	    // document.getElementById('text').innerHTML = `<b>${lunch}</b>`;
-	    // document.getElementById('text').innerHTML = `<b>${dinner}</b>`;
+        // Format the date as dd mm yyyy
+        const formattedDate = `${fmday}-${fmmonth}-${fmyear}`;
 
-	    // alert('Formatted Date:', formattedDate);
-            const previewText = `\n ${formattedDate}, ${dayName}
-				 \n
-				 \nLunch: 
-				 \n${option1}
-				 \n${option2}
-				 \n${option3}
-				 \n${option4}
-				 \n${option5}
-				 \n${option6}
-				 \n 
-			         \nDinner: 
-				 \n${option7}
-				 \n${option8}
-				 \n`;
-	    previewDiv.innerText = previewText;
-            previewDiv.style.display = 'block';
-            sendBtn.style.display = 'block';
-        } else {
-            alert('Please make sure all the options are selected!');
+        // Filter out "NA" from the options
+        const lunchOptions = [option1, option2, option3, option4, option5, option6].filter(opt => opt !== "NA");
+        const dinnerOptions = [option7, option8].filter(opt => opt !== "NA");
+
+        // Construct the preview text
+	let previewText = `<p>${formattedDate}, ${dayName}</p><br>`;
+        // let previewText = `\n ${formattedDate}, ${dayName}\n\n`;
+
+        if (lunchOptions.length > 0) {
+            // previewText += `Lunch:\n${lunchOptions.join("\n")}\n\n`;
+	    // previewText += `<b>Lunch:</b>\n${lunchOptions.join("\n")}\n\n`;
+	    previewText += `<b>Lunch:</b><br>${lunchOptions.join("<br>")}<br><br>`;
         }
-    });
+
+        if (dinnerOptions.length > 0) {
+            // previewText += `Dinner:\n${dinnerOptions.join("\n")}\n`;
+	    // previewText += `<b>Dinner:</b>\n${dinnerOptions.join("\n")}\n`;
+            previewText += `<b>Dinner:</b><br>${dinnerOptions.join("<br>")}<br>`;
+        }
+
+        previewDiv.innerHTML = previewText;
+        // previewDiv.innerHTML = previewText;
+        previewDiv.style.display = 'block';
+        sendBtn.style.display = 'block';
+        // Scroll to the preview section
+        previewDiv.scrollIntoView({ behavior: 'smooth' });
+
+    } else {
+        alert('Please make sure all the options are selected!');
+    }
+});
+
 
     sendBtn.addEventListener('click', () => {
         const previewText = previewDiv.innerText;
         navigator.clipboard.writeText(previewText).then(() => {
-            alert('Message copied to clipboard! You can now paste it in your WhatsApp group.');
+            alert('Message copied. You can now share the meal plan :)');
         });
     });
 

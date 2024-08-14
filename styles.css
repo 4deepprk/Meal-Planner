@@ -2,41 +2,94 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: rgba(171, 205, 239, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-image: url('images/food.jpg'); /* Replace with the path to your chosen image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.container {
+/* .container {
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+} */
+
+.container {
+    background-color: rgba(250, 250, 250, 0); /* White with 20% opacity */
+    backdrop-filter: blur(10px); /* Adds the blur effect behind the container */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: A subtle border for more definition */
 }
+
+select {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    color: #333; /* Text color */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Styling the options in the dropdown when expanded */
+select option {
+    background-color: rgba(255, 255, 255, 0.9); /* Less transparent for readability */
+    color: #333;
+}
+
+input[type="date"] {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    color: #333; /* Text color */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 16px;
+    width: 95%;
+    appearance: none; /* Removes default styling in some browsers */
+}
+
+/* Optional: Remove the default calendar icon and style it */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Inverts the calendar icon color */
+}
+
 
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
-    color: #25d366;
+    color: #25D2DC;
 }
 
 h2 {
     font-size: 20px;
     margin-bottom: 20px;
     text-align: left;
-    color: #25d366;
+    color: #25D2DC;
 }
 
 h3 {
     font-size: 20px;
     margin-bottom: 20px;
     text-align: left;
-    color: #25d366;
+    color: #25D2DC;
 }
 
 .form-group {
@@ -44,17 +97,21 @@ h3 {
 }
 
 label {
-    font-size: 16px;
+    font-size: 13px;
     margin-bottom: 5px;
     display: block;
+    font-weight: bold;
+    font-style: italic;
+    color: aliceblue;
 }
 
 .form-control {
     width: 100%;
-    padding: 6px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 15px;
+    color: midnightblue;
 }
 
 .btn {
@@ -64,17 +121,18 @@ label {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #25d366;
+    background-color: #25D2DC;
     color: #fff;
     margin-top: 10px;
 }
 
 .preview {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 15px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    font-size: 16px;
+    background-color: rgba(170, 200, 200, 0.6);
+    font-size: 14px;
     text-align: center;
+    color: darkblue;
     display: none;
 }
