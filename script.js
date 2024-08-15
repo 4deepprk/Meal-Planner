@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const option7 = document.getElementById('option7').value;
     const option8 = document.getElementById('option8').value;
 
-    if (date && option1 && option2 && option3 && option4 && option5 && option6 && option7 && option8) {
+    if (date && option1 || option2 || option3 || option4 || option5 || option6 || option7 || option8) {
         const dateObj = new Date(date);
 
         // Extract the day, month, and year

@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Meal Planner</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Red Heart Icon -->
 </head>
 <body>
     <div class="container">
-        <h1>Daily Meal Planner</h1>
-
+        <h1>Daily Meal Planner <span id="green-heart" onclick="resetGreen()"> 💚 </span> </h1>
 	<div class="form-group">
        	     <label for="date">Date</label>
-             <input type="date" id="date" class="form-control">
+             <span id="prev-arrow" onclick="previousDay()">⬅️</span> 
+	     <input type="date" id="date" class="form-control"> 
+	     <span id="next-arrow" onclick="nextDay()">➡️</span>
         </div>
 
-	<h2>Lunch</h2>
-        <form id="meal-form">	
-
+	<h2>Lunch <span id="red-heart" onclick="resetRed()"> ❤️ </span> </h2>
+        <form id="meal-form">
             <div class="form-group">
                 <label for="option1">Rice-dishes</label>
                 <select id="option1" class="form-control">
@@ -82,11 +83,9 @@
                     <option value="Soya Chunk Coconut Thoran">Soya Chunk Coconut Thoran</option>
                     <option value="Carrot Beans Corn Thoran">Carrot Beans Corn Thoran</option>
                     <option value="Cauliflower Thoran">Cauliflower Thoran</option>
-                    <option value="Egg Thoran">Egg Thoran</option>
                     <option value="Paneer Koavakka Capsicum Thoran">Paneer Koavakka Capsicum Thoran</option>
                     <option value="Lady's Finger Thoran">Lady's Finger Thoran</option>
                     <option value="Banana Pindi Kadala Thoran">Banana Pindi Kadala Thoran</option>
-                    <option value="Mushroom Thoran">Mushroom Thoran</option>
                     <option value="Mushroom Thoran">Mushroom Thoran</option>
                     <option value="Avarakka Thoran">Avarakka Thoran</option>
                     <option value="Achinga Thoran">Achinga Thoran</option>
@@ -137,6 +136,7 @@
                 <select id="option5" class="form-control">
 		    <option value="" selected disabled hidden>Select a dish...</option>		    
                     <option value="Egg Omelette">Egg Omelette</option>
+                    <option value="Egg Thoran">Egg Thoran</option>
                     <option value="Boiled Eggs">Boiled Eggs</option>
                     <option value="Boiled Egg Spicy Fry">Boiled Egg Spicy Fry</option>
                     <option value="Sunny Side">Sunny Side</option>
@@ -157,8 +157,8 @@
                 </select>
             </div>
 
-	<h3>Dinner</h3>
-
+	<h3>Dinner<span id="blue-heart" onclick="resetBlue()"> 💙 </span></h3>
+	<!-- Blue Heart Icon -->
             <div class="form-group">
                 <label for="option7">Main-dishes</label>
                 <select id="option7" class="form-control">

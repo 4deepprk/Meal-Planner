@@ -13,6 +13,46 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Styling for the Green Heart */
+#green-heart {
+    font-size: 25px;
+    margin-left: 5px;
+    color: green;
+    cursor: pointer;
+}
+
+/* Styling for the Red Heart */
+#red-heart {
+    font-size: 20px;
+    margin-left: 5px;
+    color: red;
+    cursor: pointer;
+}
+
+/* Styling for the Blue Heart */
+#blue-heart {
+    font-size: 20px;
+    margin-left: 5px;
+    color: blue;
+    cursor: pointer;
+}
+
+/* Styling for Previous Arrow */
+#prev-arrow {
+    font-size: 15px;
+    cursor: pointer;
+    /* margin-right: 10px; /* Space between the arrow and text */ */
+    color: black; /* You can change the color if needed */
+}
+
+/* Styling for Next Arrow */
+#next-arrow {
+    font-size: 15px;
+    cursor: pointer;
+    /* margin-left: 10px; */
+    color: black;
+}
+
 /* .container {
     background-color: #fff;
     padding: 15px;
@@ -61,7 +101,8 @@ input[type="date"] {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     font-size: 16px;
-    width: 95%;
+    width: 80%;
+    height: 30px;
     appearance: none; /* Removes default styling in some browsers */
 }
 
